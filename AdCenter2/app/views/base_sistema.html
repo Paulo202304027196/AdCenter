@@ -48,9 +48,9 @@
         <!-- Logo -->
         <a href="{{url_for('inicio')}}" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
-          <span class="logo-mini"><b>R</b>H</span>
+          <span class="logo-mini"><b>Ad</b>Center</span>
           <!-- logo for regular state and mobile devices -->
-          <span class="logo-lg"><b>RH</b>online</span>
+          <span class="logo-lg"><b>Ad</b>Center</span>
         </a>
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top" role="navigation">
@@ -62,13 +62,13 @@
             <ul class="nav navbar-nav">         
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">                  
-                  <span class="hidden-xs">Usuario do sistema</span>
+                  <span class="hidden-xs">Sistema AdCenter</span>
                 </a>
                 <ul class="dropdown-menu">
                   <!-- User image -->
                   <li class="user-header">                    
                     <p>
-                      Usuario - logado no sistema                      
+                      Sistema - Funcionando!                     
                     </p>
                   </li>
                   <!-- Menu Body -->
@@ -97,13 +97,19 @@
             
             <li>
               <a href="{{url_for('inicio')}}">
-                <i class="fa-solid fa-user"></i> <span> Usuarios</span>
+                <i class="fa-solid fa-user"></i> <span>Users</span>
               </a>
             </li>
 
             <li>
-              <a href="{{url_for('financeiro')}}">
-                <i class="fa-solid fa-user"></i> <span> Financeiro</span>
+              <a href="{{url_for('admin')}}">
+                <i class="fa-solid fa-user"></i> <span>Admins</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="{{url_for('anuncio')}}">
+                <i class="fa-solid fa-user"></i> <span>Anuncios</span>
               </a>
             </li>
                        

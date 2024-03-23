@@ -1,13 +1,13 @@
 
   
 {% extends "base_sistema.html" %}
-{% block subtitulo %} Usuarios {% endblock%}
+{% block subtitulo %} AdCenter Administradores {% endblock%}
 {% block conteudo %}
 <section class="content">
   <div class="row">
     <div class="col-xs-12">
       <div class="box-header">
-        <h3 class="box-title">Cadastro de produtos</h3>
+        <h3 class="box-title">Cadastro de Administradores</h3>
       </div><!-- /.box-header -->
       <div class="box">
         <div class="car">
@@ -26,8 +26,9 @@
               <thead>
                   <tr>
                     <th scope="col">Id</th>
-                    <th scope="col">Quantidade</th>
-                    <th scope="col">Tipo</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Documento</th>
+                    <th scope="col">Email</th>
                     <th scope="col">Data</th>
                     <th scope="col">Alterar</th>                     
                     <th scope="col">Excluir</th>
@@ -35,18 +36,19 @@
               </thead>
               <tbody>
                   <tr>
-                    <td><a href="{{url_for('usuario')}}">1</a></td>
-                    <td>10</td>
-                    <td>Sabonete</td>
+                    <td><a href="{{url_for('admin')}}">1</a></td>
+                    <td>Pedro Sampaio</td>
+                    <td>0793745282402</td>
+                    <td>pedrosampaio@email.com</td>
                     <td>14-04-2034</td>
-                    <td><a href="{{url_for('atualiza_user')}}"><span class="label label-success"><i class="fa-solid fa-pencil"></i> Alterar</span></a></td>
-                    <td><a href="{{url_for('usuario')}}"><span class="label label-danger"><i class="fa-solid fa-eraser"></i> Excluir</span></a></td>
+                    <td><a href="{{url_for('atualiza_admin')}}"><span class="label label-success"><i class="fa-solid fa-pencil"></i> Alterar</span></a></td>
+                    <td><a href="{{url_for('admin')}}"><span class="label label-danger"><i class="fa-solid fa-eraser"></i> Excluir</span></a></td>
                   </tr>
                
                            
               </tbody>
           </table>
-          <a href="{{url_for('cad_user')}}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Inserir usuarios</a>
+          <a href="{{url_for('cad_admin')}}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Inserir Administradores</a>
        </div>      
     </div>        
   </div>
