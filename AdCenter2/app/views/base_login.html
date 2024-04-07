@@ -6,8 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
         <meta name="author" content="">
-        <link rel="stylesheet" href="../views/Css/login.css">
-        <title>Login</title>        
+        <title>Palmaflex</title>        
         <!-- Vendors styles-->
         <link rel="stylesheet" href="{{url_for('static', filename='vendors/simplebar/css/simplebar.css')}}">
         <link rel="stylesheet" href="{{url_for('static', filename='css/vendors/simplebar.css')}}">
@@ -26,32 +25,8 @@
         </script> 
     </head>   
     <body>
-        <div class="container">
-            <div class="form">
-                <form action="../views/base_sistema.html">
-                    <div class="form-header">
-                        <div class="title">
-                            <h1>Login</h1>
-                        </div>
-                    </div>
-    
-                    <div class="input-box">
-                        <label for="email">E-Mail</label>
-                        <input id="email" type="email" name="email" placeholder="Digie seu E-Mail" required>
-                    </div>
-    
-                    <div class="input-box">
-                        <label for="password">Senha</label>
-                        <input id="password" type="password" name="password" placeholder="Escreva sua senha" required>
-                    </div>
-    
-                    <div class="submit">
-                        <input type="submit" value="ENTRAR">
-                    </div>
-                </form>
-            </div>
-        </div>
-
+        {% block conteudo %}
+        {% endblock %}
     <script src="{{url_for('static', filename='vendors/@coreui/coreui/js/coreui.bundle.min.js')}}"></script>
     <script src="{{url_for('static', filename='vendors/simplebar/js/simplebar.min.js')}}"></script>
     <script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>

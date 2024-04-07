@@ -1,7 +1,7 @@
 
   
 {% extends "base_sistema.html" %}
-{% block subtitulo %} AdCenter {% endblock%}
+{% block subtitulo %} Usuarios {% endblock%}
 {% block conteudo %}
 <section class="content">
   <div class="row">
@@ -34,14 +34,16 @@
                   </tr>
               </thead>
               <tbody>
+                {% for users in usuarios %}
                   <tr>
-                    <td><a href="{{url_for('usuario')}}">1</a></td>
-                    <td>caraca@caraca.com</td>
-                    <td>Caraca Carvalho</td>
-                    <td>14-04-2034</td>
-                    <td><a href="{{url_for('atualiza_user')}}"><span class="label label-success"><i class="fa-solid fa-pencil"></i> Alterar</span></a></td>
-                    <td><a href="{{url_for('usuario')}}"><span class="label label-danger"><i class="fa-solid fa-eraser"></i> Excluir</span></a></td>
+                    <td>{{users.id}}</td>
+                    <td>{{users.email}}</td>
+                    <td>{{users.nome}}</td>
+                    <td>{{users.data}}</td>
+                    <td><a href="#"><span class="label label-success"><i class="fa-solid fa-pencil"></i> Alterar</span></a></td>
+                    <td><a href="{{url_for('excluir_user',id=users.id)}}"><span class="label label-danger"><i class="fa-solid fa-eraser"></i> Excluir</span></a></td>
                   </tr>
+                {% endfor %}
                
                            
               </tbody>

@@ -1,4 +1,5 @@
 from app.models import usuario
+from app.models import contabilidade
 from app import db
 from app.forms import LoginForm
 from datetime import timedelta
@@ -15,44 +16,33 @@ def init_app(app):
     
     @app.route("/")
     def inicio():        
-        return render_template("inicio.html")
+        return render_template("/inicio.html", usuarios=db.session.execute(db.select(usuario).order_by(usuario.id)).scalars())
 
-    @app.route("/anuncio")
-    def anuncio():        
-        return render_template("anuncio.html")
+    @app.route("/conta")
+    def conta():        
+        return render_template("/conta01.html", contil=db.session.execute(db.select(contabilidade).order_by(contabilidade.id)).scalars())
     
-    @app.route("/admin")
-    def admin():        
-        return render_template("admin.html")
-       
-    @app.route("/usuario")
-    def usuario():        
-        return render_template("usuario.html")
+    @app.route("/excluir/<int:id>")
+    def excluir_user(id):
+        delete=usuario.query.filter_by(id=id).first()
+        db.session.delete(delete)
+        db.session.commit()
+        return redirect(url_for("inicio"))
+    
+    @app.route("/excluir_conta/<int:id>")
+    def excluir_conta(id):
+        delete=contabilidade.query.filter_by(id=id).first()
+        db.session.delete(delete)
+        db.session.commit()
+        return redirect(url_for("conta"))
     
     @app.route("/cad_user")
     def cad_user():        
         return render_template("cad_user.html")
-
-    @app.route("/cad_admin")
-    def cad_admin():      
-        return render_template("cad_admin.html")
     
-    @app.route("/cad_anuncio")
-    def cad_anuncio():      
-        return render_template("cad_anuncio.html")
-
-       
     @app.route("/atualiza_user")
     def atualiza_user():        
         return render_template("atualiza_user.html")
-
-    @app.route("/atualiza_admin")
-    def atualiza_admin():        
-        return render_template("atualiza_admin.html")
     
-    @app.route("/atualiza_anuncio")
-    def atualiza_anuncio():        
-        return render_template("atualiza_anuncio.html")
-
     
     
