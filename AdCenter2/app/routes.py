@@ -1,4 +1,5 @@
 from app.models import usuario
+from app.models import anuncio
 #from app.models import contabilidade
 from app import db
 from app.forms import LoginForm
@@ -38,4 +39,8 @@ def init_app(app):
     def atualiza_admin():        
         return render_template("atualiza_admin.html")
     
-    
+    @app.route("/anuncio")
+    def anuncio():        
+        return render_template("anuncio.html", anuncios=db.session(db.select(anuncio).order_by(anuncio.id)).scalars())
+    @app.route("/excluir_anuncio / < int:id > ")
+    def excluir_anuncio():        
