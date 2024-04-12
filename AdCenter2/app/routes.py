@@ -1,5 +1,5 @@
 from app.models import usuario
-from app.models import contabilidade
+#from app.models import contabilidade
 from app import db
 from app.forms import LoginForm
 from datetime import timedelta
@@ -16,7 +16,7 @@ def init_app(app):
     
     @app.route("/")
     def inicio():        
-        return render_template("/inicio.html")
+        return render_template("inicio.html")
             
     @app.route("/cad_user")
     def cad_user():        
