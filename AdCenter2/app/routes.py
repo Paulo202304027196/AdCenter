@@ -26,5 +26,16 @@ def init_app(app):
     def atualiza_user():        
         return render_template("atualiza_user.html")
     
+    @app.route("/admin")
+    def admin():        
+        return render_template("admin.html")
+    
+    @app.route("/cad_admin")
+    def cad_admin():      
+        return render_template("cad_admin.html")
+    
+    @app.route("/atualiza_admin")
+    def atualiza_admin():        
+        return render_template("atualiza_admin.html")
     
     
