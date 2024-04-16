@@ -1,13 +1,11 @@
-
-  
 {% extends "base_sistema.html" %}
-{% block subtitulo %} Usuarios {% endblock%}
+{% block subtitulo %} Anúncios AdCenter {% endblock%}
 {% block conteudo %}
 <section class="content">
   <div class="row">
     <div class="col-xs-12">
       <div class="box-header">
-        <h3 class="box-title">Cadastro de anuncios/h3>
+        <h3 class="box-title">Exibição Anúncios</h3>
       </div><!-- /.box-header -->
       <div class="box">
         <div class="car">
@@ -20,37 +18,97 @@
                 {% endfor %}
              {% endif %}
           {% endwith %}
-        </div>      
-          <div class="box-body">
-            <table id="example" class="display" style="width:100%">
-              <thead>
-                  <tr>
-                    <th scope="col">Id</th>
-                    <th scope="col">Título</th>
-                    <th scope="col">Preço</th>
-                    <th scope="col">Link</th>
-                    <th scope="col">Data</th>
-                    <th scope="col">Alterar</th>                     
-                    <th scope="col">Excluir</th>
-                  </tr>
-              </thead>
-              <tbody>
-                {% for anuncios in anuncio %}
-                  <tr>
-                    <td>{{anuncios.id}}</td>
-                    <td>{{anuncios.Título}}</td>
-                    <td>{{anuncios.Preço}}</td>
-                    <td>{{anuncios.Link}}</td>
-                    <td>{{anuncios.data}}</td>
-                    <td><a href="#"><span class="label label-success"><i class="fa-solid fa-pencil"></i> Alterar</span></a></td>
-                    <td><a href="{{url_for('excluir_user',id=users.id)}}"><span class="label label-danger"><i class="fa-solid fa-eraser"></i> Excluir</span></a></td>
-                  </tr>
-                {% endfor %}
-               
-                           
-              </tbody>
-          </table>
-          <a href="{{url_for('cad_user')}}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Inserir usuarios</a>
+        </div>
+        <div id="mercado-livre">
+          <div class="logo"><img src="{{url_for('static', filename='css/img/mercado-livre.webp')}}" alt="Mercado Livre"></div>
+          <section class="main-protudcts-container">
+            <div class="main-card">
+              <div class="product-image"><img src="{{url_for('static', filename='css/img/ps5.webp')}}" alt="PS5" height=110px width=100% margin-bottom=10px background-position=center background-size=cover></div>
+              <h3 class="m1">PS5 MÍDIA FÍSICA 1</h3>
+              <p>A patir de R$ <span class="main-bold">3.729,00</span></p>
+              <a href="https://lista.mercadolivre.com.br/console-playstation-5-midia-fisica" class="main-btn1">buscar</a>
+            </div>
+            <div class="main-card">
+              <div class="product-image" id="img-2"><img src="{{url_for('static', filename='css/img/radio.jpg')}}" alt="Rádio" height=110px width=100% margin-bottom=10px background-position=center background-size=cover></div>
+              <h3 class="m1">RÁDIO PARA CARRO JBL</h3>
+              <p>A patir de R$ <span class="main-bold">262,90</span></p>
+              <a href="https://lista.mercadolivre.com.br/radio-automotivo-jbl?skipInApp=true&matt_tool=34955704&matt_word=Default_URL_MLB&matt_source=google&matt_campaign_id=10771947278&matt_ad_group_id=110175121350&matt_match_type=&matt_network=g&matt_device=c&matt_creative=465295565641&matt_keyword=&matt_ad_position=&matt_ad_type=&matt_merchant_id=&matt_product_id=&matt_product_partition_id=&matt_target_id=aud-1966489759667:dsa-394624151036&cq_src=google_ads&cq_cmp=10771947278&cq_net=g&cq_plt=gp&cq_med=&gad_source=1&gclid=CjwKCAjw_LOwBhBFEiwAmSEQAby2YL4eQrVyNAz12GfjWDaUGkbX8tVj6Hjd8WBLWOgYNlGOAvbrwRoC0GAQAvD_BwE" class="main-btn1">buscar</a>
+            </div>
+            <div class="main-card">
+              <div class="product-image" id="img-3"><img src="{{url_for('static', filename='css/img/tenis.webp')}}" alt="Tênis" height=110px width=100% margin-bottom=10px background-position=center background-size=cover></div>
+              <h3 class="m1">TÊNIS NIKE AIRFORCE</h3>
+              <p>A patir de R$ <span class="main-bold">86,90</span></p>
+              <a href="https://lista.mercadolivre.com.br/tenis-nike-airforce" class="main-btn1">buscar</a>
+            </div>
+            <div class="main-card">
+              <div class="product-image" id="img-4"><img src="{{url_for('static', filename='css/img/notebook.webp')}}" alt="Notebook Gamer" height=110px width=100% margin-bottom=10px background-position=center background-size=cover></div>
+              <h3 class="m1">NOTEBOOK GAMER</h3>
+              <p>A patir de R$ <span class="main-bold">3.783,00</span></p>
+              <a href="https://lista.mercadolivre.com.br/notebook-gamer" class="main-btn1">buscar</a>
+            </div>
+          </section>
+        </div>
+        <hr>
+        <div id="olx">
+          <div class="logo"><img src="{{url_for('static', filename='css/img/Logo_olx.png')}}" alt=""></div>
+          <section class="main-protudcts-container">
+            <div class="main-card">
+              <div class="product-image" id="img-5"><img src="{{url_for('static', filename='css/img/violão.jpg')}}" alt="Violão" height=110px width=100% margin-bottom=10px background-position=center background-size=cover></div>
+              <h3 class="o2">VIOLÃO TAYLOR 210e</h3>
+              <p>A partir de R$ <span class="main-bold">4.000,00</span></p>
+              <a href="https://www.olx.com.br/anuncios/violao-taylor-e" class="main-btn2">buscar</a>
+            </div>
+            <div class="main-card">
+              <div class="product-image" id="img-6"><img src="{{url_for('static', filename='css/img/sofá.jpg')}}" alt="Sofa" height=110px width=100% margin-bottom=10px background-position=center background-size=cover></div>
+              <h3 class="o2">SOFA EM LINHO 160x100</h3>
+              <p>A partir de R$ <span class="main-bold">500,00</span></p>
+              <a href="https://www.olx.com.br/estado-sp?q=sofa" class="main-btn2">buscar</a>
+            </div>
+            <div class="main-card">
+              <div class="product-image" id="img-7"><img src="{{url_for('static', filename='css/img/pneu.jpg')}}" alt="Pneu" height=110px width=100% margin-bottom=10px background-position=center background-size=cover></div>
+              <h3 class="o2">PNEU ARO 14 PIRELLI 4UN</h3>
+              <p>A parir de R$ <span class="main-bold">1.032,00</span></p>
+              <a href="https://www.olx.com.br/estado-sp?q=pneu%20aro%2014" class="main-btn2">buscar</a>
+            </div>
+            <div class="main-card">
+              <div class="product-image" id="img-8"><img src="{{url_for('static', filename='css/img/controle.jpg')}}" alt="Controle" height=110px width=100% margin-bottom=10px background-position=center background-size=cover></div>
+              <h3 class="o2">CONTROLE DE PS5</h3>
+              <p>A partir de R$ <span class="main-bold">480,00</span></p>
+              <a href="https://ma.olx.com.br/regiao-de-sao-luis/videogames/controle-de-ps5-dualsense-sem-fio-c-garantia-lojas-wiki-1162314964?rec=u&lis=vi_not_found_web%7C16060%7Cvi_not_found_web%7C0" class="main-btn2">buscar</a>
+            </div>
+          </section>
+        </div>
+  
+        <div id="facebook">
+          <div class="logo"><img src="{{url_for('static', filename='css/img/i489928.jpeg')}}" alt=""></div>
+          <section class="main-protudcts-container">
+            <div class="main-card">
+              <div class="product-image" id="img-9"><img src="{{url_for('static', filename='css/img/cama.jpg')}}" alt="Cama" height=110px width=100% margin-bottom=10px background-position=center background-size=cover></div>
+              <h3 class="f3">CAMA BOX QUEEN</h3>
+              <p>A partir de R$ <span class="main-bold">1.200,00</span></p>
+              <a href="https://www.facebook.com/marketplace/category/queen-bed-frames/?locale=pt_BR" class="main-btn3">buscar</a>
+            </div>
+            <div class="main-card">
+              <div class="product-image" id="img-10"><img src="{{url_for('static', filename='css/img/relogio.jpg')}}" alt="Relógio" height=110px width=100% margin-bottom=10px background-position=center background-size=cover></div>
+              <h3 class="f3">RELOGIO GSHOCK</h3>
+              <p>A partir de R$ <span class="main-bold">90,00</span></p>
+              <a href="https://www.facebook.com/marketplace/campinas/search?query=gshock" class="main-btn3">buscar</a>
+            </div>
+            <div class="main-card">
+              <div class="product-image" id="img-11"><img src="{{url_for('static', filename='css/img/pneu.jpg')}}" alt="Pneu" height=110px width=100% margin-bottom=10px background-position=center background-size=cover></div>
+              <h3 class="f3">CELULAR IPHONE</h3>
+              <p>A partir de R$ <span class="main-bold">900,00</span></p>
+              <a href="https://www.facebook.com/marketplace/campinas/search?query=iphone" class="main-btn3">buscar</a>
+            </div>
+            <div class="main-card">
+              <div class="product-image" id="img-12"><img src="{{url_for('static', filename='css/img/pneu.jpg')}}" alt="Pneu" height=110px width=100% margin-bottom=10px background-position=center background-size=cover></div>
+              <h3 class="f3">MONITOR GAMER 240HZ</h3>
+              <p>A partir de R$ <span class="main-bold">900,00</span></p>
+              <a href="https://www.facebook.com/marketplace/campinas/search/?query=%20240hz" class="main-btn3">buscar</a>
+            </div>
+          </section>
+        </div>
+      </main>
        </div>      
     </div>        
   </div>

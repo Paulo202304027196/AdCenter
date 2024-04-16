@@ -6798,3 +6798,221 @@ button.close {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*  {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+/*Cabeçalho*/
+
+nav {
+    display: flex;
+    justify-content: end;
+}
+
+.desktop-menu ul{
+    list-style-type: none;
+    display: flex;
+}
+
+.desktop-menu ul li{
+    width: 150px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.desktop-menu ul li a{
+    font-weight: 400;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #fff;
+    transition: 0.3s all;
+}
+
+.desktop-menu ul li a:hover {
+    color: #00aeef;
+    text-decoration: underline;
+}
+
+/*Grid de produtos*/
+.main-container {
+    background-color: #eee;
+    min-height: 60vh;
+    padding: 10px;
+    text-align: center;
+}
+
+.main-products-container {
+    max-width: 1200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.main-card {
+    width: 21%;
+    display: inline-block;
+    margin: 1% 1%;
+    padding: 15px;
+}
+
+.product-image {
+    height=110px
+    width: 100%;
+    margin-bottom: 10px;
+    background-position: center;
+    background-size: cover;
+}
+
+.logo{
+    display: flex;
+    justify-content: center;
+}
+
+.logo img{
+    width: 120px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+}
+
+#img-1 {
+    background-image: url('../img/ps5.webp');
+}
+
+#img-2 {
+    background-image: url('../img/radio.jpg');
+}
+
+#img-3 {
+    background-image: url('../img/tenis.webp');
+}
+
+#img-4 {
+    background-image: url('../img/notebook.webp');
+}
+
+#img-5 {
+    background-image: url('../img/violão.jpg');
+}
+
+#img-6 {
+    background-image: url('../img/sofá.jpg');
+}
+
+#img-7 {
+    background-image: url('../img/pneu.jpg');
+}
+
+#img-8 {
+    background-image: url('../img/controle.jpg');
+}
+
+#img-9 {
+    background-image: url('../img/cama.jpg');
+}
+
+#img-10 {
+    background-image: url('../img/relogio.jpg');
+}
+
+#img-11 {
+    background-image: url('../img/celular.jpg');
+}
+
+#img-12 {
+    background-image: url('../img/monitor.jpg');
+}
+
+.m1 {
+    margin-bottom: 10px;
+    border-left: 5px solid #FFE600;
+    padding-left: 7px;
+    font-size: 24px;
+}
+
+.o2 {
+    margin-bottom: 10px;
+    border-left: 5px solid #85C446;
+    padding-left: 7px;
+    font-size: 24px;
+}
+
+.f3 {
+    margin-bottom: 10px;
+    border-left: 5px solid #1877F2;
+    padding-left: 7px;
+    font-size: 24px;
+}
+
+.main-card p {
+    margin-bottom: 10px;
+}
+
+.main-bold {
+    font-weight: bold;
+}
+
+.main-btn1 {
+    display: block;
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    background-color: #FFE600;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    transition: .5s;
+}
+
+.main-btn1:hover {
+    background-color: #b4a200;
+}
+
+.main-btn2 {
+    display: block;
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    background-color: #6441A4;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    transition: .5s;
+}
+
+.main-btn2:hover {
+    background-color: #FF7900;
+}
+
+.main-btn3 {
+    display: block;
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    background-color: #3b5998;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    transition: .5s;
+}
+
+.main-btn3:hover {
+    background-color: #1877F2;
+}
+
+/* Footer */
+footer {
+    background-color: #3c9ace;
+    color: #fff;
+    border-top: 3px solid #00aeef;
+    text-align: center;
+    padding: 38px;
+}

@@ -1,5 +1,5 @@
 {% extends "base_sistema.html" %}
-{% block subtitulo %} AdCenter Administradores {% endblock%}
+{% block subtitulo %} Atualiza Anuncios {% endblock%}
     {% block conteudo %}
     <section class="content">
       <div class="row">
@@ -11,19 +11,19 @@
               <h3 class="box-title">Atualiza Anúncios</h3>
             </div><!-- /.box-header -->
             <!-- form start -->
-            <form class="row g-3" action="" method="POST" name="dados_user" onSubmit="return enviardados_user();">
+            <form class="row g-3" action="{{url_for('atualiza_anuncio,id=anuncio01.id')}}" method="POST" name="dados_user" onSubmit="return enviardados_user();">
               <div class="box-body">               
                 <div class="col-md-4">
                   <label class="form-label">Título</label>
-                  <input class="form-control" type="text" name="nome" id="nome" value="Nubankm">
+                  <input class="form-control" type="text" name="titulo" id="titulo" value="{{anuncio01.titulo}}">
                 </div>
                 <div class="col-md-4">
                   <label class="form-label">Preço</label>
-                  <input class="form-control" type="number" name="document" id="document" value="44715264987">
+                  <input class="form-control" type="number" name="preço" id="preço" value="{{anuncio01.preço}}">
                 </div>
                 <div class="col-md-4">
                   <label class="form-label" >Link</label>
-                  <input class="form-control" type="email" name="email" value="caraca@caraca.com">
+                  <input class="form-control" type="link" name="link" value="{{anuncio01.link}}">
                 </div>
                 
                 <div class="col-md-12">
