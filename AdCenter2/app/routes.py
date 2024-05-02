@@ -21,7 +21,7 @@ def init_app(app):
     
     @app.route("/anuncio")
     def anuncio():
-        return render_template("anuncio.html", anuncios=db.session(db.select(anuncio).order_by(anuncio.id)).scalars())
+        return render_template("anuncio.html") #, anuncios=db.session(db.select(anuncio).order_by(anuncio.id)).scalars())
     
     
     @app.route("/admin")
