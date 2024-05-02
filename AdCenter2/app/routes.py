@@ -34,7 +34,7 @@ def init_app(app):
     
     @app.route("/cad_anuncio")
     def cad_anuncio():
-        return render_template("cad_anuncio.h")
+        return render_template("cad_anuncio.html")
     
     @app.route("/cad_admin")
     def cad_admin():

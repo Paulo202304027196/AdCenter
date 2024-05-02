@@ -19,12 +19,39 @@
              {% endif %}
           {% endwith %}
         </div>
+      </div>      
+      <div class="box-body">
+        <table id="example" class="display" style="width:100%">
+          <thead>
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Título</th>
+                <th scope="col">Preço</th>
+                <th scope="col">Link</th>
+                <th scope="col">Data</th>
+                <th scope="col">Alterar</th>                     
+                <th scope="col">Excluir</th>
+              </tr>
+          </thead>
+          <tbody>
+            {% for anuncio in anuncios %}
+              <tr>
+                <td>{{anuncio.id}}</td>
+                <td>{{anuncio.titulo}}</td>
+                <td>{{anuncio.preco}}</td>
+                <td>{{anuncio.link}}</td>
+                <td>{{anuncio.data}}</td>
+                <td><a href="#"><span class="label label-success"><i class="fa-solid fa-pencil"></i> Alterar</span></a></td>
+                <td><a href="{{url_for('excluir_anuncio',id=anuncio.id)}}"><span class="label label-danger"><i class="fa-solid fa-eraser"></i> Excluir</span></a></td>
+              </tr>
+            {% endfor %}
+        <!--
         <div id="mercado-livre">
           <div class="logo"><img src="{{url_for('static', filename='css/img/mercado-livre.webp')}}" alt="Mercado Livre"></div>
           <section class="main-protudcts-container">
             <div class="main-card">
               <div class="product-image"><img src="{{url_for('static', filename='css/img/ps5.webp')}}" alt="PS5" height=110px width=100% margin-bottom=10px background-position=center background-size=cover></div>
-              <h3 class="m1">PS5 MÍDIA FÍSICA 1</h3>
+              <h3 class="m1"></h3>
               <p>A patir de R$ <span class="main-bold">3.729,00</span></p>
               <a href="https://lista.mercadolivre.com.br/console-playstation-5-midia-fisica" class="main-btn1">buscar</a>
             </div>
@@ -107,9 +134,9 @@
               <a href="https://www.facebook.com/marketplace/campinas/search/?query=%20240hz" class="main-btn3">buscar</a>
             </div>
           </section>
-        </div>
+        </div> -->
       </main>
-       </div>      
+      </div>      
     </div>        
   </div>
 </section>
