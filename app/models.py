@@ -11,14 +11,22 @@ class usuario(db.Model, UserMixin):
     nome = db.Column(db.String(255), nullable=False, unique=True)
     email = db.Column(db.String(255), nullable=False)
     senha = db.Column(db.String(255), nullable=False)
-    data = db.Column(db.DateTime,  default=db.func.current_timestamp(), onupdate=db.func.current_timestamp()) 
+    data = db.Column(db.DateTime,  default=db.func.current_timestamp(), onupdate=db.func.current_timestamp())
+    def json(self):
+        return{
+            'id':self.id,
+            'nome':self.nome,
+            'email':self.email,
+            'senha':self.senha
+        } 
 
 class anuncios(db.Model):
     __tablename__ = "anuncios"
     id = db.Column(db.Integer, primary_key=True)    
     titulo = db.Column(db.String(255), nullable=False)
-    preco = db.Column(db.String(255), nullable=False)
-    link = db.Column(db.Sting(255), nullable=False)
+    preco = db.Column(db.Integer, nullable=False)
+    links = db.Column(db.String(255), nullable=False)
+    plataforma = db.Column(db.String(255), nullable=False)
     data = db.Column(db.DateTime,  default=db.func.current_timestamp(), onupdate=db.func.current_timestamp())
     
 class admins(db.Model, UserMixin):
