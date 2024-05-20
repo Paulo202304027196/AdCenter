@@ -46,7 +46,7 @@
           <td><a href="{{anun.links}}">{{anun.links}}</a></td>
           <td>{{anun.plataforma}}</td>
           <td>{{anun.data}}</td>
-          <td><a href="{{url_for('anuncio')}}"><span class="label label-success"><i class="fa-solid fa-pencil"></i>Alterar</span></a></td>
+          <td><a href="{{url_for('atualiza_anuncio')}}"><span class="label label-success"><i class="fa-solid fa-pencil"></i>Alterar</span></a></td>
           <td><a href="{{url_for('excluir_anun', id=anun.id)}}"><span class="label label-danger"><i class="fa-solid fa-pencil"></i>Excluir</span></a></td>
         </tr>
         {% endfor %}
