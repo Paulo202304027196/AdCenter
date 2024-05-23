@@ -40,6 +40,122 @@
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+    
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: Roboto;
+      }
+    
+      .skin-blue .main-header .navbar {
+        background-color: #00aeef;
+      }
+    
+      .skin-blue .main-header .logo {
+        background-color: #1a2226;
+        text-decoration: none;
+      }
+    
+      .skin-blue .sidebar-menu>li.header {
+        color: #4b646f;
+        background: #1a2226;
+      }
+    
+      .skin-blue .sidebar-menu>li.header::after {
+        content: "";
+        display: block;
+        width: 85%;
+        height: 0.5rem;
+        background-color: #00aeef;
+        margin: 0 auto;
+        position: absolute;
+        border-radius: 10px;
+      }
+    
+      .skin-blue .wrapper,
+      .skin-blue .main-sidebar,
+      .skin-blue .left-side {
+        background-color: #1a2226;
+      }
+    
+      .skin-blue .main-header .navbar .nav>li>a {
+        font-weight: 500;
+        font-size: 1.5rem;
+        color: #fff;
+        text-transform: uppercase;
+      }
+    
+      .main-header .sidebar-toggle {
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 1.5rem;
+      }
+    
+      .content {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: #fff;
+        padding: 3rem;
+      }
+    
+      .box-title {
+        display: block;
+        font-size: none;
+        margin-block-start: 0.67em;
+        margin-block-end: 0.67em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        font-weight: bold;
+        unicode-bidi: isolate;
+      }
+    
+      .col-md-4 {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1.1rem;
+      }
+    
+      .form-control {
+        margin: 0.6rem 0;
+        padding: 0.8rem 1.2rem;
+        border: none;
+        border-radius: 10px;
+        box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.1098039216);
+      }
+    
+      .form-control:hover {
+        background-color: rgba(238, 238, 238, 0.4588235294);
+      }
+    
+      .box-body {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 1rem 0;
+      }
+    
+      .btn-primary {
+        width: 20%;
+        border: none;
+        background-color: #00aeef;
+        padding: 0.62rem;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: #fff;
+    
+      }
+    </style>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   </head>
   <body class="hold-transition skin-blue sidebar-mini">

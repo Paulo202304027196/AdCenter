@@ -32,7 +32,7 @@ def init_app(app):
                 return redirect(url_for("index"))
             
             login_user(user, remember=form.remember.data, duration=timedelta(days=7))
-            return redirect(url_for("inicio"))
+            return redirect(url_for("anuncio"))
         
         return render_template("index.html", form=form)
 
@@ -68,18 +68,24 @@ def init_app(app):
             db.session.commit()
                             
             flash("Anúncio criado com sucesso!")       
-            return redirect(url_for("cad_anuncio"))
+            return redirect(url_for("anuncio"))
         return render_template("cad_anuncio.html")
 
     @app.route("/atualiza_anuncio/<int:id>", methods=["GET", "POST"])
-    def atualiza_anuncio():
-        ads = anuncios.query.filter_by(id=id).first()        
+    def atualiza_anuncio(id):
+        anuncio01 = anuncios.query.filter_by(id=id).first()        
         if request.method == "POST":
+            titulo_ad = request.form["titulo"]
+            preco_ad = request.form["preco"]
+            links_ad = request.form["links"]
+            plataforma_ad = request.form["plataforma"]
             
                             
-            flash("Anúncio criado com sucesso!")       
-            return redirect(url_for("cad_anuncio"))
-        return render_template("cad_anuncio.html")
+            flash("Anúncio atualiza com sucesso!")
+            anuncio01.query.filter_by(id=id).update({"titulo":titulo_ad,"preco":preco_ad,"links":links_ad,"plataforma":plataforma_ad})
+            db.session.commit()
+            return redirect(url_for("anuncio"))
+        return render_template("atualiza_anuncio.html", ads = anuncio01)
         
     @app.route("/admin")
     def admin():

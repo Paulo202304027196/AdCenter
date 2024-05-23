@@ -11,21 +11,25 @@
               <h3 class="box-title">Atualiza Anúncios</h3>
             </div><!-- /.box-header -->
             <!-- form start -->
-            <form class="row g-3" action="{{url_for('atualiza_anuncio,id=anuncio01.id')}}" method="POST" name="dados_user" onSubmit="return enviardados_user();">
+            <form class="row g-3" action="{{url_for('atualiza_anuncio',id=ads.id)}}" method="POST" name="dados_user" onSubmit="return enviardados_user();">
               <div class="box-body">               
                 <div class="col-md-4">
                   <label class="form-label">Título</label>
-                  <input class="form-control" type="text" name="titulo" id="titulo" value="{{anuncio01.titulo}}">
+                  <input class="form-control" type="text" name="titulo" id="titulo" value="{{ads.titulo}}">
                 </div>
                 <div class="col-md-4">
                   <label class="form-label">Preço</label>
-                  <input class="form-control" type="number" name="preço" id="preço" value="{{anuncio01.preço}}">
+                  <input class="form-control" type="number" name="preco" id="preco" value="{{ads.preco}}">
                 </div>
                 <div class="col-md-4">
                   <label class="form-label" >Link</label>
-                  <input class="form-control" type="link" name="link" value="{{anuncio01.link}}">
+                  <input class="form-control" type="text" name="links" value="{{ads.links}}">
                 </div>
-                
+                <div class="col-md-4">
+                  <label class="form-label">Plataforma</label>
+                  <input class="form-control" type="text" name="plataforma" value="{{ads.plataforma}}">
+                </div>
+
                 <div class="col-md-12">
                   <br>                      
                 </div>                                                         

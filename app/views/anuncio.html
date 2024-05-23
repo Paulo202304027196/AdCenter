@@ -1,58 +1,57 @@
 {%extends "base_sistema.html" %}
 {% block subtítulo %} Anúncios AdCenter {% endblock %}
     {% block conteudo %}
-
-<section class="row">
-  <div class="row">
-    <div class="col-xs-12">
-      <div class="box-header">
-        <h3 class="box-title"> Exibição Anúncios </h3>
-      </div>
-      <div class="box">
-        <div class="car">
-          {% with messages = get_flashed_messages() %}
-            {% if messages %}
-              {% for message in messages %}
-              <div class="alert alert-success">
-                {{ message }}
+    <section class="row">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="box-header">
+              <h3 class="box-title"> Exibição Anúncios </h3>
+            </div>
+            <div class="box">
+              <div class="car">
+                {% with messages = get_flashed_messages() %}
+                  {% if messages %}
+                    {% for message in messages %}
+                    <div class="alert alert-success">
+                      {{ message }}
+                    </div>
+                    {% endfor %}
+                  {% endif %}
+                {% endwith %}
               </div>
-              {% endfor %}
-            {% endif %}
-          {% endwith %}
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
-  <div class="box-body">
-    <table id="example" class="display" style="width: 100%;">
-      <thead>
-        <tr>
-          <th>Id</th>
-          <th>Título</th>
-          <th>Preço</th>
-          <th>Link</th>
-          <th>Plataforma</th>
-          <th>Data</th>
-          <th>Alterar</th>
-          <th>Excluir</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for anun in anuncio %}
-        <tr>
-          <td>{{anun.id}}</td>
-          <td>{{anun.titulo}}</td>
-          <td>{{anun.preco}}</td>
-          <td><a href="{{anun.links}}">{{anun.links}}</a></td>
-          <td>{{anun.plataforma}}</td>
-          <td>{{anun.data}}</td>
-          <td><a href="{{url_for('anuncio')}}"><span class="label label-success"><i class="fa-solid fa-pencil"></i>Alterar</span></a></td>
-          <td><a href="{{url_for('excluir_anun', id=anun.id)}}"><span class="label label-danger"><i class="fa-solid fa-pencil"></i>Excluir</span></a></td>
-        </tr>
-        {% endfor %}
-      </tbody>
-    </table>
-  </div>
-</section>
+        <div class="box-body">
+          <table id="example" class="display" style="width: 100%;">
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Título</th>
+                <th>Preço</th>
+                <th>Link</th>
+                <th>Plataforma</th>
+                <th>Data</th>
+                <th>Alterar</th>
+                <th>Excluir</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for anun in anuncio %}
+              <tr>
+                <td>{{anun.id}}</td>
+                <td>{{anun.titulo}}</td>
+                <td>{{anun.preco}}</td>
+                <td><a href="{{anun.links}}">{{anun.links}}</a></td>
+                <td>{{anun.plataforma}}</td>
+                <td>{{anun.data}}</td>
+                <td><a href="{{url_for('atualiza_anuncio',id=anun.id)}}"><span class="label label-success"><i class="fa-solid fa-pencil"></i> Alterar</span></a></td>
+                <td><a href="{{url_for('excluir_anun', id=anun.id)}}"><span class="label label-danger"><i class="fa-solid fa-pencil"></i>Excluir</span></a></td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+    </section>
 {% endblock %}
 
